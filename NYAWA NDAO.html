@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dummy Weather Data</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .weather-dashboard {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .weather-section {
+            margin: 10px 0;
+            cursor: pointer;
+        }
+
+        .highlighted {
+            background-color: #e0f7fa;
+            border-radius: 5px;
+            padding: 10px;
+        }
+
+        .change-city {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #d1c4e9;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        footer {
+            margin-top: 20px;
+            font-size: 0.8em;
+            color: #888;
+        }
+    </style>
+</head>
+<body>
+    <div class="weather-dashboard">
+        <h1>Dummy Weather Data</h1>
+        <div class="weather-section" id="currently">
+            <h2>Currently</h2>
+            <p>🌦️ 21° in Tokyo</p>
+        </div>
+        <div class="weather-section" id="tomorrow">
+            <h2>Tomorrow</h2>
+            <p>🌧️ 10° / 22°</p>
+        </div>
+        <div class="weather-section" id="saturday">
+            <h2>Saturday</h2>
+            <p>🌦️ 15° / 17°</p>
+        </div>
+        <div class="weather-section highlighted" id="sunday">
+            <h2>Sunday</h2>
+            <p>☀️ 25° / 28°</p>
+        </div>
+        <div class="change-city">
+            Change City
+        </div>
+        <footer>Coded by NYAWA NDAO</footer>
+    </div>
+    <script>
+        document.querySelectorAll('.weather-section').forEach(section => {
+            section.addEventListener('click', () => {
+                document.querySelectorAll('.weather-section').forEach(sec => sec.classList.remove('highlighted'));
+                section.classList.add('highlighted');
+            });
+        });
+    </script>
+</body>
+</html>
